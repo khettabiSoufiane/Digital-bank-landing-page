@@ -42,7 +42,7 @@ a {
 }
 .container {
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 /* small */
 @media (min-width: 768px) {
@@ -70,9 +70,12 @@ header {
   position: relative;
   z-index: 1;
 }
+header nav {
+  height: 100%;
+}
 @media (min-width: 768px) {
   header {
-    height: 100px;
+    height: 92px;
   }
 }
 header .container {
@@ -181,15 +184,18 @@ header .container .Request {
 }
 /* end header */
 /* start linding */
+.linding .ground {
+  display: none;
+}
 @media (min-width: 768px) {
   .linding {
-    height: calc(100vh + 100px);
+    /* height: calc(100vh - 92px); */
     overflow: hidden;
     background-color: var(--Gray-100-color);
   }
   .linding .ground {
     display: block;
-    height: 100vh;
+    height: calc(100vh - 92px);
     position: absolute;
     top: 0;
     left: 0;
@@ -206,23 +212,23 @@ header .container .Request {
   }
 }
 .linding .container .images {
-  width: calc(100% + 40px);
-  margin-left: -20px;
+  width: calc(100% + 50px);
+  margin-left: -25px;
   position: relative;
   top: -80px;
 }
 @media (min-width: 768px) {
   .linding .container .images {
-    width: calc(100% + -378px);
     position: relative;
-    top: -66px;
+    top: -0px;
+    flex: 1;
   }
   .linding .container .images img:first-child {
     display: block;
-    width: 1114px;
-    position: relative;
-    top: -166px;
-    left: 110px;
+    width: 937px;
+    position: absolute;
+    top: -190px;
+    right: -400px;
   }
 }
 .linding .container .images img:nth-child(2) {
@@ -244,10 +250,11 @@ header .container .Request {
 @media (min-width: 768px) {
   .linding .container .images img:last-child {
     transform: none;
-    width: calc(100% - 50px);
+    max-width: none;
+    width: 600px;
     position: absolute;
-    top: -80px;
-    left: 280px;
+    top: -134px;
+    left: 350px;
   }
 }
 .linding .container .text {
@@ -260,9 +267,10 @@ header .container .Request {
     flex-direction: column;
     justify-content: center;
     top: 0;
-    width: 560px;
+    width: 360px;
+    height: calc(100vh - 92px);
   }
-  .linding .container .text h2 {
+  .linding .container .text h1 {
     font-size: 40px;
   }
 }
@@ -278,6 +286,7 @@ header .container .Request {
 }
 @media (min-width: 768px) {
   .services {
+    padding-top: 0;
     top: 0px;
   }
 }
@@ -355,7 +364,7 @@ header .container .Request {
 .articles .container .content .box .text {
   padding: 0px 30px 30px;
 }
-.articles .container .content .box .text h4 {
+.articles .container .content .box .text p {
   font-weight: normal;
   font-size: 12px;
   color: var(--Gray-600-color);
